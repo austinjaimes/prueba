@@ -1,0 +1,6 @@
+# Redirección para formularios Netlify
+/mensaje-enviado    /mensaje-enviado/index.html    200
+
+# Redirección genérica si usas rutas manejadas por el frontend (SPA)
+# (Opcional, si usas Astro con modo híbrido o client-side routing)
+/*    /index.html    200
