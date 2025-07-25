@@ -1,0 +1,110 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto | Nexis</title>
+    <style>
+      body {
+        background-color: #111;
+        color: white;
+        font-family: sans-serif;
+      }
+
+      .form-container {
+        max-width: 600px;
+        margin: 100px auto 80px;
+        padding: 2rem;
+        background-color: #1a1a1a;
+        border-radius: 10px;
+      }
+
+      .input-group {
+        margin-bottom: 1.5rem;
+        position: relative;
+      }
+
+      .input-group input,
+      .input-group textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #444;
+        background-color: #222;
+        color: white;
+        border-radius: 5px;
+        outline: none;
+      }
+
+      .input-group label {
+        position: absolute;
+        left: 12px;
+        top: 8px;
+        font-size: 0.9rem;
+        color: #888;
+        pointer-events: none;
+        transition: 0.2s ease;
+      }
+
+      .input-group input:focus + label,
+      .input-group textarea:focus + label,
+      .input-group input:not(:placeholder-shown) + label,
+      .input-group textarea:not(:placeholder-shown) + label {
+        top: -12px;
+        font-size: 0.75rem;
+        color: #00bcd4;
+        background-color: #1a1a1a;
+        padding: 0 4px;
+      }
+
+      button {
+        background: linear-gradient(to right, #00bcd4, #3f51b5);
+        color: white;
+        padding: 0.7rem 1.5rem;
+        border: none;
+        border-radius: 999px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background 0.3s ease;
+      }
+
+      button:hover {
+        background: linear-gradient(to right, #3f51b5, #00bcd4);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="form-container">
+      <h2>Contáctanos</h2>
+      <form name="contact" method="POST" data-netlify="true" action="/mensaje-enviado">
+        <input type="hidden" name="form-name" value="contact" />
+        <input type="text" name="_honey" style="display:none" />
+        <input type="hidden" name="_captcha" value="false" />
+
+        <div class="input-group">
+          <input type="text" id="name" name="name" placeholder=" " required />
+          <label for="name">Nombre</label>
+        </div>
+
+        <div class="input-group">
+          <input type="email" id="email" name="email" placeholder=" " required />
+          <label for="email">Correo electrónico</label>
+        </div>
+
+        <div class="input-group">
+          <input type="tel" id="phone" name="phone" placeholder=" " required />
+          <label for="phone">Número de teléfono</label>
+        </div>
+
+        <div class="input-group">
+          <textarea id="description" name="message" placeholder=" " rows="4" required></textarea>
+          <label for="description">Descripción</label>
+        </div>
+
+        <button type="submit">Enviar mensaje</button>
+      </form>
+    </section>
+  </body>
+</html>
